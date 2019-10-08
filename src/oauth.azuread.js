@@ -26,6 +26,8 @@
               var requestToken = (event.url).split("code=")[1];
               console.log(requestToken);
 
+              browserRef.hide();
+
               $http({method: "post", headers: {'Content-Type': 'application/x-www-form-urlencoded'}, url: "https://login.microsoftonline.com/" + tenantId + "/oauth2/token", data:
                 "client_id=" + clientId +
                 "&code=" + requestToken +
